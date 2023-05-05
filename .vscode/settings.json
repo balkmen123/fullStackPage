@@ -4,5 +4,8 @@
     "scrollbar.shadow": "#00000000"
   },
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[xml]": {
+    "editor.defaultFormatter": "SimonSiefke.prettier-vscode"
+  }
 }

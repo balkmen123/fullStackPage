@@ -8,4 +8,35 @@
 .inner {
   height: 100%;
   width: 1150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+}
+
+.search {
+  width: 361px;
+  height: 46px;
+  background-color: rgba(22, 24, 35, 0.06);
+  border-radius: 92px;
+  padding: 0px 16px;
+  input {
+    color: #828282;
+    font-size: 1.6rem;
+    border: none;
+    padding: 12px 0px;
+
+    background-color: transparent;
+    outline: none;
+  }
+}
+
+.clear {
+}
+
+.loading {
+}
+
+.search-btn {
 }
