@@ -15,9 +15,9 @@ function Header() {
         </div>
         <div className={cx('search')}>
           <input placeholder="Search accounts and videos" />
-          <button className={cx('clear')}>
+          {/* <button className={cx('clear')}>
             <FontAwesomeIcon icon={faCircleXmark} />
-          </button>
+          </button> */}
           <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
           <button className={cx('search-btn')}>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
