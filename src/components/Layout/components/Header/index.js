@@ -2,20 +2,35 @@ import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import images from '~/assets/images';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import {
+  faSpinner,
+  faMagnifyingGlass,
+  faSignIn,
+  faEllipsisVertical,
+  faEarthAsia,
+  faCircleQuestion,
+  faKeyboard,
+} from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css'; // optional
 import { useEffect, useState } from 'react';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccoutItem';
+import Button from '~/components/Button';
+import Menu from '~/components/Popper/Menu';
 
 const cx = classNames.bind(styles);
+const MENU_ITEMS = [
+  { icon: <FontAwesomeIcon icon={faEarthAsia}></FontAwesomeIcon>, title: ' English ' },
+  { icon: <FontAwesomeIcon icon={faCircleQuestion}></FontAwesomeIcon>, title: ' Feedback end help', to: '/feedback' },
+  { icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>, title: ' Keyboard shortcuts ' },
+];
 
 function Header() {
   const [searchResult, setSearchResult] = useState([]);
   useEffect(() => {
     setTimeout(() => {
-      setSearchResult([1, 2, 3]);
+      setSearchResult([]);
     }, 0);
   }, []);
   return (
@@ -24,7 +39,6 @@ function Header() {
         <div className={cx('logo')}>
           <img src={images.logo} alt="tiktok"></img>
         </div>
-        <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
         <Tippy
           interactive
           visible={searchResult.length > 0}
@@ -45,13 +59,23 @@ function Header() {
             {/* <button className={cx('clear')}>
             <FontAwesomeIcon icon={faCircleXmark} />
           </button> */}
-
+            <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
             <button className={cx('search-btn')}>
               <FontAwesomeIcon icon={faMagnifyingGlass} />
             </button>
           </div>
         </Tippy>
-        <div className={cx('actions')}>ccc</div>
+        <div className={cx('actions')}>
+          <Button className={'text'}>Upload</Button>
+          <Button className={'primary'} iconLeft={<FontAwesomeIcon icon={faSignIn} />}>
+            Login
+          </Button>
+          <Menu items={MENU_ITEMS}>
+            <button className={cx('more-btn')}>
+              <FontAwesomeIcon icon={faEllipsisVertical} />
+            </button>
+          </Menu>
+        </div>
       </div>
     </header>
   );

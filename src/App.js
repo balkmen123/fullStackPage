@@ -10,7 +10,6 @@ function App() {
           {publicRoutes.map((route, index) => {
             const Page = route.component;
             const Layout = route.layout ? route.layout : DefaultLayout;
-            console.log('layout', Layout);
 
             return (
               <Route
