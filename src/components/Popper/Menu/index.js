@@ -10,11 +10,11 @@ const cx = classNames.bind(styles);
 
 function Menu({ children, items = [], onChange }) {
   const [history, setHistory] = useState([{ data: items }]);
-  console.log('history', history);
+  const [active, setActive] = useState(false);
+  console.log('active', active);
   const current = history[history.length - 1]; //lấy phần tử cuối cùng trong mảng history
   const renderItems = () => {
     return current.data.map((item, index) => {
-      console.log(item, '123123');
       const isParent = !!item.children;
       return (
         <MenuItem
@@ -24,6 +24,7 @@ function Menu({ children, items = [], onChange }) {
             if (isParent) {
               setHistory((prev) => [...prev, item.children]);
               onChange(item);
+              setActive(true);
             }
           }}
         ></MenuItem>
@@ -33,17 +34,17 @@ function Menu({ children, items = [], onChange }) {
   return (
     <Tippy
       interactive
-      visible
       delay={[0, 700]}
       placement="bottom-end"
       render={(attrs) => (
         <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
-          <PopperWrapper className={cx('Item-render')}>
+          <PopperWrapper className={cx('Item-render', active ? 'active' : '')}>
             {history.length > 1 && (
               <Header
                 title="lang"
                 onBack={() => {
                   setHistory((prev) => prev.slice(0, prev.length - 1));
+                  setActive(false);
                 }}
               ></Header>
             )}
@@ -51,6 +52,9 @@ function Menu({ children, items = [], onChange }) {
           </PopperWrapper>
         </div>
       )}
+      onHide={() => {
+        setHistory((prev) => prev.slice(0, 1));
+      }}
     >
       {children}
     </Tippy>

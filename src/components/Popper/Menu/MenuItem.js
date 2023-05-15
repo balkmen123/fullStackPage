@@ -5,9 +5,10 @@ import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
-function MenuItem({ data, onClick }) {
+function MenuItem({ data, onClick, acTive }) {
+  console.log(data);
   return (
-    <Button className={cx('menu-item')} iconLeft={data.icon} to={data.to} onClick={onClick}>
+    <Button className={cx('menu-item')} iconLeft={data.icon} to={data.to} onClick={onClick} acTive>
       {data.title}
     </Button>
   );
