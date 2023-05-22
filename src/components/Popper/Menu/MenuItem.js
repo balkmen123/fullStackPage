@@ -6,9 +6,12 @@ import { useState } from 'react';
 const cx = classNames.bind(styles);
 
 function MenuItem({ data, onClick, acTive }) {
+  const classes = cx('menu-item', {
+    separate: data.separate,
+  });
   console.log(data);
   return (
-    <Button className={cx('menu-item')} iconLeft={data.icon} to={data.to} onClick={onClick} acTive>
+    <Button className={classes} iconLeft={data.icon} to={data.to} onClick={onClick} acTive>
       {data.title}
     </Button>
   );
