@@ -11,7 +11,6 @@ const cx = classNames.bind(styles);
 function Menu({ children, items = [], onChange }) {
   const [history, setHistory] = useState([{ data: items }]);
   const [active, setActive] = useState(false);
-  console.log('active', active);
   const current = history[history.length - 1]; //lấy phần tử cuối cùng trong mảng history
   const renderItems = () => {
     return current.data.map((item, index) => {
