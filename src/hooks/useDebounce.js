@@ -1,11 +1,7 @@
 import { useEffect, useState } from 'react';
 
 function useDebounce(Value, delay) {
-  console.log('abc', Value);
-  console.log('delay', delay);
   const [searchValue, setSearchValue] = useState(Value);
-  console.log('searchValue111', searchValue);
-
   useEffect(() => {
     const handler = setTimeout(
       () =>
@@ -15,7 +11,6 @@ function useDebounce(Value, delay) {
     );
     return () => clearTimeout(handler);
   }, [Value]);
-  console.log('searchValue', searchValue);
   return searchValue;
 }
 

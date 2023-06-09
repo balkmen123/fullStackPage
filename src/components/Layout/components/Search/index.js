@@ -1,12 +1,13 @@
 import { faMagnifyingGlass, faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import HeadlessTippy from '@tippyjs/react/headless';
-import { Wrapper as PopperWrapper } from '~/components/Popper';
-import AccountItem from '~/components/AccoutItem';
+import { Wrapper as PopperWrapper } from '../../../Popper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import styles from './Search.module.scss';
 import { useEffect, useState, useRef } from 'react';
-import useDebounce from '~/hooks/useDebounce';
+
+import useDebounce from '../../../../hooks/useDebounce';
+import AccountItem from '../../../AccoutItem';
 
 const cx = classNames.bind(styles);
 
@@ -17,9 +18,7 @@ function Search() {
   const [loading, setLoading] = useState(false);
 
   const debounceValue = useDebounce(searchValue, 500);
-  console.log('debounceValue', debounceValue);
   const inputRef = useRef();
-  console.log('searchResult--', searchResult);
   useEffect(() => {
     if (!debounceValue.trim()) {
       setSearchResult([]);

@@ -1,6 +1,6 @@
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
-import images from '~/assets/images';
+import images from '../../../../assets/images';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faSignIn,
@@ -17,13 +17,15 @@ import {
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; // optional
 
-import Button from '~/components/Button';
-import Menu from '~/components/Popper/Menu';
-import { MessageIcon, UploadIcon } from '~/components/Icons';
-import Image from '~/components/Image';
+// import Image from './components/Image';
 import Search from '../Search';
+import Button from '../../../Button';
+import Menu from '../../../Popper/Menu';
+import { UploadIcon, MessageIcon } from '../../../Icons/Icon';
+import Image from '../../../Image';
 
 const cx = classNames.bind(styles);
+
 const MENU_ITEMS = [
   {
     icon: <FontAwesomeIcon icon={faEarthAsia}></FontAwesomeIcon>,
@@ -53,8 +55,13 @@ function Header() {
   return (
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
-        <div className={cx('logo')}>
-          <img src={images.logo} alt="tiktok"></img>
+        <div className={cx('logo flex items-center')}>
+          <img
+            className="h-[38px] w-[38px] rounded-[8px] object-contain"
+            src="https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
+            alt="tiktok"
+          ></img>
+          <h4 class="text-[#000] text-[1.4rem] font-[700] ml-[16px]">Học Lập Trình Để Đi Làm</h4>
         </div>
 
         {/* Search */}
@@ -62,11 +69,6 @@ function Header() {
         <div className={cx('actions')}>
           {currentUser ? (
             <div className={cx('current-user')}>
-              <Tippy delay={[0, 200]} content={'UpLoad Video'}>
-                <button className={cx('action-btn')}>
-                  <FontAwesomeIcon icon={faCloudUpload}></FontAwesomeIcon>
-                </button>
-              </Tippy>
               <Tippy delay={[0, 200]} content={'UpLoad Video'}>
                 <button className={cx('action-btn')}>
                   {/* <FontAwesomeIcon icon={faCloudUpload}></FontAwesomeIcon>

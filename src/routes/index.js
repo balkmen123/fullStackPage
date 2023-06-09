@@ -1,15 +1,19 @@
-import Home from '~/pages/Home';
-import Following from '~/pages/Following';
-import Profile from '~/pages/Profile';
-import Upload from '~/pages/Upload';
-import HeaderOnly from '~/components/Layout/HeaderOnly';
-
+// import Home from '~/pages/Home';
+import Home from '../pages/Home/Home';
+import Following from '../pages/Following';
+import Profile from '../pages/Profile';
+import LangdingPage from '../pages/LangdingPage/LangdingPage';
+// import HeaderOnly from '~/components/Layout/HeaderOnly';
+import HeaderOnly from '../components/Layout/HeaderOnly';
+import HomeContainer from '../pages/Home/Home.container';
+import LandingPage from '../components/Layout/LandingPage/LandingPage';
+import StudyRoute from '../pages/StudyRoute';
 // Public routes
 const publicRoutes = [
-  { path: '/', component: Home },
-  { path: '/following', component: Following },
+  { path: '/', component: HomeContainer },
+  { path: '/StudyRoute', component: StudyRoute },
   { path: '/:nickname', component: Profile },
-  { path: '/upload', component: Upload, layout: HeaderOnly },
+  { path: '/langding/page', component: LangdingPage, layout: LandingPage },
 ];
 
 const privateRoutes = [];
