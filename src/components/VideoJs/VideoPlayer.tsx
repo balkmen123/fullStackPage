@@ -4,7 +4,7 @@ import VideoJS from './VideoJs';
 
 interface IProps {
   streamUrl: string;
-  thumbnail: string;
+  thumbnail?: string;
 }
 
 const VideoPlayer: FC<IProps> = memo(({ streamUrl, thumbnail }) => {
@@ -21,9 +21,10 @@ const VideoPlayer: FC<IProps> = memo(({ streamUrl, thumbnail }) => {
     sources: [
       {
         src: streamUrl,
-        type: 'application/x-mpegURL',
+        type: 'video/youtube',
       },
     ],
+    techOrder: ['html5', 'youtube'],
   };
 
   const handlePlayerReady = (player: any) => {

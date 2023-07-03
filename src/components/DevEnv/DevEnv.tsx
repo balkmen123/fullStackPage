@@ -9,7 +9,7 @@ function DevEnv() {
           <span className="animate-spin">|</span>
         </h2>
         <VideoPlayer
-          streamUrl="https://live-par-1-abr-cdn.livepush.io/live_abr_cdn/emaIqCGoZw-6/index.m3u8"
+          streamUrl="https://www.youtube.com/watch?v=M62l1xA5Eu8&t=1s"
           thumbnail="https://files.fullstack.edu.vn/f8-prod/courses/7.png"
         ></VideoPlayer>
       </div>

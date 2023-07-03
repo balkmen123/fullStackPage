@@ -4,9 +4,9 @@ function HeaderLandingPage() {
   window.addEventListener('scroll', function () {
     const currentScrollPosition = window.pageYOffset;
     if (currentScrollPosition > lastScrollPosition) {
-      console.log('Scroll xuống');
+      // console.log('Scroll xuống');
     } else {
-      console.log('Scroll lên');
+      // console.log('Scroll lên');
     }
     lastScrollPosition = currentScrollPosition;
   });

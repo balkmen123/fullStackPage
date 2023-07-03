@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { LeaningInfo, Post, VideoInfo } from '../../models/Leaning/Leaning.model';
 import Home from './Home';
 
-const courses: LeaningInfo[] = [
+export const courses: LeaningInfo[] = [
   {
     course_id: 1,
     course_title: 'HTML CSS Pro',
@@ -35,24 +35,29 @@ const courses: LeaningInfo[] = [
   },
 ];
 
-const coursesFree: LeaningInfo[] = [
+export const coursesFree: LeaningInfo[] = [
   {
     course_id: 5,
     course_title: 'Kiến Thức Nhập Môn IT',
     thumbnail: 'https://files.fullstack.edu.vn/f8-prod/courses/7.png',
     course_studen: 108.851,
+    course_content:
+      'Để có cái nhìn tổng quan về ngành IT - Lập trình web các bạn nên xem các videos tại khóa này trước nhé.',
   },
   {
     course_id: 5,
     course_title: 'Lập trình C++ cơ bản, nâng cao',
     thumbnail: 'https://files.fullstack.edu.vn/f8-prod/courses/21/63e1bcbaed1dd.png',
     course_studen: 10.509,
+    course_content:
+      'Khóa học lập trình C++ từ cơ bản tới nâng cao dành cho người mới bắt đầu. Mục tiêu của khóa học này nhằm giúp các bạn nắm được các khái niệm căn cơ của lập trình, giúp các bạn có nền tảng vững chắc để chinh phục con đường trở thành một lập trình viên.',
   },
   {
     course_id: 5,
     course_title: 'HTML CSS từ Zero đến Hero',
     thumbnail: 'https://files.fullstack.edu.vn/f8-prod/courses/2.png',
     course_studen: 164.147,
+    course_content: 'Trong khóa này chúng ta sẽ cùng nhau xây dựng giao diện 2 trang web là The Band & Shopee.',
   },
   {
     course_id: 5,
@@ -86,7 +91,7 @@ const coursesFree: LeaningInfo[] = [
   },
 ];
 
-const posts: Post[] = [
+export const posts: Post[] = [
   {
     title: 'Tổng hợp các sản phẩm của học viên tại F8',
     avt: 'https://files.fullstack.edu.vn/f8-prod/user_avatars/1/623d4b2d95cec.png',

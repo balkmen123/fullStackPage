@@ -1,5 +1,12 @@
+import SimpleSlider from '../../components/Slider/Slide';
+import MySlider from '../../components/Slider/Slide';
+
 function Profile() {
-  return <h2>Profile page</h2>;
+  return (
+    <div>
+      <SimpleSlider></SimpleSlider>
+    </div>
+  );
 }
 
 export default Profile;

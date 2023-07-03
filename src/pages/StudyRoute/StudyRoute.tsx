@@ -1,4 +1,12 @@
-function StudyRoute() {
+interface Prop {
+  textHeader: string;
+  textDescribe: string;
+}
+
+function StudyRoute(porp: Prop) {
+  const { textHeader, textDescribe } = porp;
+  console.log(textHeader);
+
   return (
     <div className="max-w-[1920px] w-full ">
       <div className="mb-[60px] px-[44px] pt-3">
@@ -96,7 +104,7 @@ function StudyRoute() {
             </h2>
             <p className="text-[1.4rem] leading-[1.6] my-[19px]">
               Hàng nghìn người khác đang học lộ trình giống như bạn. Hãy tham gia hỏi đáp, chia sẻ và hỗ trợ nhau trong
-              quá trình học nhé.
+              quá trình học nhé
             </p>
             <a
               className="border-[2px] border-solid border-[#292929] rounded-[999px] inline-block text-[1.5rem] font-[600] mt-[8px] py-[10px] px-[16px] text-center"

@@ -8,6 +8,7 @@ import App from './App';
 import 'video.js/dist/video-js.css';
 import 'videojs-seek-buttons/dist/videojs-seek-buttons.css';
 import 'videojs-watermark/dist/videojs-watermark.css';
+import 'videojs-youtube';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

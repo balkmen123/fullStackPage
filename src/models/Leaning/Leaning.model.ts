@@ -15,6 +15,8 @@ class LeaningInfo {
 
   course_disable?: boolean;
 
+  course_content?: string;
+
   link?: string;
 }
 

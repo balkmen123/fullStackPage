@@ -3,7 +3,6 @@ import HeaderLearning from '../HeaderLearding/HeaderLearning';
 import ItemLearning from '../ItemLearning';
 
 function ScrolListVertical({ newLean, headerLearn, more, data }) {
-  console.log('data---', data);
   return (
     <>
       <HeaderLearning more={more} text={headerLearn} newLeaning={newLean}></HeaderLearning>

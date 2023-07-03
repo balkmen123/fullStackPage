@@ -3,6 +3,7 @@ import ScrolListVertical from '../../components/ScrolListVertical/ScrolListVerti
 import { LeaningInfo, Post, VideoInfo } from '../../models/Leaning/Leaning.model';
 import Slider from '../../components/Slider/Slider';
 import './Home.module.scss';
+import MySlider from '../../components/Slider/Slide';
 
 interface IProps {
   coursesVip?: LeaningInfo[];
@@ -19,7 +20,6 @@ function Home(prop: IProps): ReactElement | null {
       <div className="">
         <Slider></Slider>
       </div>
-
       <div className="mt-[70px] pt-0 pb-[70px] px-[64px]">
         <ScrolListVertical
           data={coursesVip}
@@ -32,7 +32,7 @@ function Home(prop: IProps): ReactElement | null {
         <div className="mt-[50px]"></div>
         <ScrolListVertical data={posts} more headerLearn="Bài viết nổi bật" newLean={false}></ScrolListVertical>
         <div className="mt-[50px]"></div>
-        <ScrolListVertical data={videos} more headerLearn="Bài viết nổi bật" newLean={false}></ScrolListVertical>
+        <ScrolListVertical data={videos} more headerLearn="Video nổi bật" newLean={false}></ScrolListVertical>
       </div>
     </div>
   );

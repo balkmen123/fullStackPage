@@ -11,9 +11,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 
 function ItemLearning({ data }) {
-  console.log(data);
+  const titleUrl = data.course_title;
+  const slug = titleUrl?.replace(/\s+/g, '-');
+
   return (
-    <Link to={data.link}>
+    <Link to={data.link ? data.link : `/Course/${slug}`}>
       <div className="item relative">
         <div className="group h-[225px] relative">
           <img className="rounded-[16px] w-full h-full object-cover" src={data.thumbnail}></img>

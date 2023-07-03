@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { publicRoutes } from './routes';
 import { DefaultLayout } from './components/Layout';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 function App() {
   return (
@@ -9,7 +11,6 @@ function App() {
         <Routes>
           {publicRoutes.map((route, index) => {
             const Page = route.component;
-            console.log('|Page', Page);
             const Layout = route.layout ? route.layout : DefaultLayout;
 
             return (
